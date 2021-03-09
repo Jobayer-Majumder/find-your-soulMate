@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./component/header/Header";
+import './App.css'
+import Main from "./component/main/Main";
+import Data from './data.json';
+import Navbar from "./component/navbar/Navbar";
+import { useState } from "react";
 
 function App() {
+  let [cart, setCart] = useState([])
+  const handleClick = (data) => {
+    const newCart = [...cart, data]
+    setCart(newCart);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header></Header>
+      <Navbar data={cart} count={cart.length}></Navbar>
+      {
+        Data.map(people => <Main handler={handleClick} data={people}></Main>)
+      }
     </div>
   );
 }

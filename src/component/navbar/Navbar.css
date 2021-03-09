@@ -1,0 +1,20 @@
+.container-2 {
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background: rgb(240, 193, 75);;
+}
+.left{
+    color: white;
+}
+.right button {
+    margin: 30px;
+    padding: 15px 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+}
